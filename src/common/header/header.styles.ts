@@ -1,7 +1,12 @@
 import {css} from '@emotion/css';
 
-export const root = css`
 
- display: flex;
- justify-content: center;
+export const root = css`
+ 
+
+`;
+
+export const btnHome = css`
+ 
+ 
 `;
