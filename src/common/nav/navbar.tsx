@@ -1,5 +1,7 @@
 import React from 'react';
 import * as classes from './navbar.styles';
+import { Link } from 'react-router-dom';
+import { SwitchRoutes } from '@/router';
 
 export const Navbar: React.FC = () => {
 
@@ -8,16 +10,16 @@ export const Navbar: React.FC = () => {
     <nav className={classes.container}>
       <ul>
         <li>
-          <a href="#">Home</a>
+          <Link to={SwitchRoutes.root}>Home</Link>
         </li>
         <li>
-          <a href="#">Create Post</a>
+          <Link to={"#"}>Create Post</Link>
         </li>
         <li>
-          <a href="#">Update</a>
+          <Link to={"#"}>Update</Link>
         </li>
         <li>
-          <a href="#">List</a>
+          <Link to={"#"}>List</Link>
         </li>
       </ul>
     </nav>
