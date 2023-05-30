@@ -4,4 +4,5 @@ export const root = css`
 
  display: flex;
  justify-content: center;
+ height: 100%;
 `;
