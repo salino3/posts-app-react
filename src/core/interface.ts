@@ -14,14 +14,7 @@ export interface Posts {
   keyWords: string[];
 }
 
-export const posts: Posts[] = [{
-    id: null,
-    name: "",
-    description: "",
-    img: "",
-    keyWords: [""],
-  },
-];
+export const posts: Posts[] = [];
 
 export interface State {
     posts: Posts[]
