@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
           <Link to={"#"}>Update</Link>
         </li>
         <li>
-          <Link to={"#"}>List</Link>
+          <Link to={SwitchRoutes.list}>List</Link>
         </li>
       </ul>
     </nav>

@@ -10,7 +10,7 @@ export const List: React.FC = () => {
         <Link to={SwitchRoutes.create}>Go to create a Post</Link>
       </li>
       <li>
-        <Link to={"#"}>Look the list post</Link>
+        <Link to={SwitchRoutes.list}>Look the list post</Link>
       </li>
       <li>
         <Link to={"#"}>Up date a post</Link>
