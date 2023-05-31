@@ -3,7 +3,12 @@ interface GET_POSTS {
   payload: Posts[];
 };
 
-export type All_Actions = GET_POSTS;
+interface CREATE_POST {
+  type: "CREATE_POST";
+  payload: Posts;
+};
+
+export type All_Actions = GET_POSTS | CREATE_POST;
 
 //
 export interface Posts {
@@ -12,7 +17,7 @@ export interface Posts {
   description: string;
   img: string;
   keyWords: string[];
-}
+};
 
 export const posts: Posts[] = [];
 
@@ -23,4 +28,5 @@ export interface State {
 export interface MyState {
   state: State;
   dispatch: React.Dispatch<All_Actions>;
+  createPost: (post: Posts) => void;
 };

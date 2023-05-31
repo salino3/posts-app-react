@@ -15,15 +15,25 @@ export const MyProvider: React.FC<Props> = ({ children }) => {
     type: "GET_POSTS",
     payload: posts,
   });
-}, [dispatch]);
+}, []);
+
+
+const createPost = React.useCallback((post: Posts) => {
+
+  dispatch({
+   type: "CREATE_POST",
+   payload: post
+  });
+ }, []);
+
 
   React.useEffect(() => {
     getPosts(posts);
   }, [getPosts]);
 
-  console.log(state);
+  console.log("state", state);
   return (
-    <GlobalContext.Provider value={{ state, dispatch }}>
+    <GlobalContext.Provider value={{ state, dispatch, createPost }}>
       {children}
     </GlobalContext.Provider>
   );
