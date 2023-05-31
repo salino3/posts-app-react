@@ -1,10 +1,10 @@
 import React from "react";
-import { GlobalContext, Posts } from "@/core";
+import { GlobalContext, MyState, Posts } from "@/core";
 
 
 export const useOnSubmit = (dataForm : Posts) => {
 
-   const {createPost} = React.useContext(GlobalContext);
+   const { createPost } = React.useContext<MyState>(GlobalContext);
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (
     event: React.FormEvent<HTMLFormElement>
