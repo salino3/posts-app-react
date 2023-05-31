@@ -1,9 +1,12 @@
 import React from 'react';
 import { Posts } from '@/core';
+import { FormPost } from './components';
 import * as classes from './create-post.styles';
+import { useChangeHandler } from './hooks/change-handler/change-handler.component';
 
 export const CreatePost: React.FC = () => {
 
+    
  const [dataForm, setDataForm] = React.useState<Posts>({
    id: null,
    title: "",
@@ -12,17 +15,19 @@ export const CreatePost: React.FC = () => {
    keyWords: ["", "", ""],
  });
 
-const handleChange =
-  (field: keyof Posts) =>
-  (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    if (field === "keyWords") {
-      const keywords = event.target.value.split(",").slice(0, 3); 
-      setDataForm({ ...dataForm, [field]: keywords });
-    } else {
-      setDataForm({ ...dataForm, [field]: event.target.value });
-    }
-    console.log("dataForm", dataForm);
-  };
+// const handleChange =
+//   (field: keyof Posts) =>
+//   (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+//     if (field === "keyWords") {
+//       const keywords = event.target.value.split(",").slice(0, 3); 
+//       setDataForm({ ...dataForm, [field]: keywords });
+//     } else {
+//       setDataForm({ ...dataForm, [field]: event.target.value });
+//     }
+//     console.log("dataForm", dataForm);
+//   };
+
+const { handleChange } = useChangeHandler({ dataForm, setDataForm });
 
     const handleChangeKeyWords =
       (index: number) =>
@@ -31,7 +36,6 @@ const handleChange =
         keywords[index] = event.target.value;
         setDataForm({ ...dataForm, keyWords: keywords });
             console.log("dataForm", dataForm);
-
       };
 
 
@@ -53,61 +57,12 @@ const handleSubmit: React.FormEventHandler<HTMLFormElement> = (
   return (
     <div className={classes.root}>
       <h1>Create post</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange("title")}
-          placeholder="Text a title"
-          name="title"
-          type="text"
-          value={dataForm.title}
-        />{" "}
-        <br />
-        <textarea
-          onChange={handleChange("description")}
-          placeholder="Text a description"
-          name="description"
-          value={dataForm.description}
-        ></textarea>{" "}
-        <br />
-        <textarea
-          name="img"
-          placeholder="Choose a image"
-          onChange={handleChange("img")}
-          id="img"
-          cols={30}
-          rows={4}
-          value={dataForm.img}
-        ></textarea>
-        <br /> <br />
-        <section>
-          <input
-            onChange={handleChangeKeyWords(0)}
-            placeholder="Text first key word"
-            name="keyWords[0]"
-            type="text"
-            required
-            value={dataForm.keyWords[0]}
-          />{" "}
-          <br /> <br />
-          <input
-            onChange={handleChangeKeyWords(1)}
-            placeholder="Text second key word"
-            name="keyWords[1]"
-            type="text"
-            value={dataForm.keyWords[1]}
-          />{" "}
-          <br /> <br />
-          <input
-            onChange={handleChangeKeyWords(2)}
-            placeholder="Text third key word"
-            name="keyWords[2]"
-            type="text"
-            value={dataForm.keyWords[2]}
-          />
-        </section>{" "}
-        <br />
-        <button type="submit">Send</button>
-      </form>
+      <FormPost
+        dataForm={dataForm}
+        handleChange={handleChange}
+        handleChangeKeyWords={handleChangeKeyWords}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 }
