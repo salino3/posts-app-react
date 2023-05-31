@@ -12,8 +12,6 @@ export const CreatePost: React.FC = () => {
    keyWords: ["", "", ""],
  });
 
-
-
 const handleChange =
   (field: keyof Posts) =>
   (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -71,13 +69,15 @@ const handleSubmit: React.FormEventHandler<HTMLFormElement> = (
           value={dataForm.description}
         ></textarea>{" "}
         <br />
-        <input
-          placeholder="Chosse a image"
-          onChange={handleChange("img")}
+        <textarea
           name="img"
-          type="file"
+          placeholder="Choose a image"
+          onChange={handleChange("img")}
+          id="img"
+          cols={30}
+          rows={4}
           value={dataForm.img}
-        />{" "}
+        ></textarea>
         <br /> <br />
         <section>
           <input
@@ -104,8 +104,9 @@ const handleSubmit: React.FormEventHandler<HTMLFormElement> = (
             type="text"
             value={dataForm.keyWords[2]}
           />
-        </section> <br />
-        <button  type='submit'>Send</button>
+        </section>{" "}
+        <br />
+        <button type="submit">Send</button>
       </form>
     </div>
   );
