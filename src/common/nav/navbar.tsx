@@ -13,7 +13,7 @@ export const Navbar: React.FC = () => {
           <Link to={SwitchRoutes.root}>Home</Link>
         </li>
         <li>
-          <Link to={"#"}>Create Post</Link>
+          <Link to={SwitchRoutes.create}>Create Post</Link>
         </li>
         <li>
           <Link to={"#"}>Update</Link>
