@@ -9,19 +9,16 @@ export const CreatePost: React.FC = () => {
    title: "",
    description: "",
    img: "",
-   keyWords: [""],
+   keyWords: ["", "", ""],
  });
 
-//  const handleChange = (field: keyof Posts) => (event: any) => {
-//      setDataForm({ ...dataForm, [field]: event.target.value });
-//      console.log("dataForm", dataForm);
-//    };
+
 
 const handleChange =
   (field: keyof Posts) =>
   (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (field === "keyWords") {
-      const keywords = event.target.value.split(",").slice(0, 3); // Obtén las palabras clave y limita a 3
+      const keywords = event.target.value.split(",").slice(0, 3); 
       setDataForm({ ...dataForm, [field]: keywords });
     } else {
       setDataForm({ ...dataForm, [field]: event.target.value });
@@ -29,23 +26,49 @@ const handleChange =
     console.log("dataForm", dataForm);
   };
 
+    const handleChangeKeyWords =
+      (index: number) =>
+      (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const keywords = [...dataForm.keyWords];
+        keywords[index] = event.target.value;
+        setDataForm({ ...dataForm, keyWords: keywords });
+            console.log("dataForm", dataForm);
+
+      };
+
+
+const handleSubmit: React.FormEventHandler<HTMLFormElement> = (
+  event: React.FormEvent<HTMLFormElement>
+) => {
+  event.preventDefault();
+
+  const nonEmptyKeyWords = dataForm.keyWords.filter(
+    (keyword) => keyword !== ""
+  );
+  const result = { ...dataForm, keyWords: nonEmptyKeyWords };
+
+  console.log("onSubmit", result);
+};
+
 
 
   return (
     <div className={classes.root}>
       <h1>Create post</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           onChange={handleChange("title")}
           placeholder="Text a title"
           name="title"
           type="text"
+          value={dataForm.title}
         />{" "}
         <br />
         <textarea
           onChange={handleChange("description")}
           placeholder="Text a description"
           name="description"
+          value={dataForm.description}
         ></textarea>{" "}
         <br />
         <input
@@ -53,30 +76,36 @@ const handleChange =
           onChange={handleChange("img")}
           name="img"
           type="file"
+          value={dataForm.img}
         />{" "}
         <br /> <br />
         <section>
           <input
-            onChange={handleChange("keyWords")}
-            placeholder="Text a title"
+            onChange={handleChangeKeyWords(0)}
+            placeholder="Text first key word"
             name="keyWords[0]"
             type="text"
+            required
+            value={dataForm.keyWords[0]}
           />{" "}
           <br /> <br />
           <input
-            onChange={handleChange("keyWords")}
-            placeholder="Text a title"
+            onChange={handleChangeKeyWords(1)}
+            placeholder="Text second key word"
             name="keyWords[1]"
             type="text"
+            value={dataForm.keyWords[1]}
           />{" "}
           <br /> <br />
           <input
-            onChange={handleChange("keyWords")}
-            placeholder="Text a title"
+            onChange={handleChangeKeyWords(2)}
+            placeholder="Text third key word"
             name="keyWords[2]"
             type="text"
+            value={dataForm.keyWords[2]}
           />
-        </section>
+        </section> <br />
+        <button  type='submit'>Send</button>
       </form>
     </div>
   );
