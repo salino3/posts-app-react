@@ -1,6 +1,6 @@
 import React from "react";
 import { GlobalContext } from "./global-context";
-import { MyState, Posts, posts } from "./interface";
+import { Posts, posts } from "./interface";
 import { MyReducer } from "./my-reducer";
 
 interface Props {

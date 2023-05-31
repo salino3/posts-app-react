@@ -8,7 +8,7 @@ export type All_Actions = GET_POSTS;
 //
 export interface Posts {
   id?: number | null;
-  name: string;
+  title: string;
   description: string;
   img: string;
   keyWords: string[];
