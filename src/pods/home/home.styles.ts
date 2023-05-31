@@ -53,6 +53,7 @@ export const subTitle = css`
   -webkit-background-clip: text;
   background-clip: text;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: large;
 `;
 
 export const list = css`
@@ -64,6 +65,7 @@ export const list = css`
   padding: 15px;
   justify-content: center;
   height: 100%;
+  list-style: disc;
 
 
 `;
