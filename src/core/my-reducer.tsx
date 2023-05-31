@@ -8,7 +8,12 @@ export const MyReducer = (state: State, action: All_Actions) => {
           ...state,
           posts: action.payload,
         };
-        
+      case "CREATE_POST":
+        return {
+          ...state,
+          posts:  [...state.posts, action.payload],
+        };
+
       default:
         return state;
     };

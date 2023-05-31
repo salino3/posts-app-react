@@ -67,7 +67,6 @@ export const list = css`
   height: 100%;
   list-style: disc;
 
-
 `;
 
 
