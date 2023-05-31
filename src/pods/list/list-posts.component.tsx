@@ -9,6 +9,8 @@ export const ListPosts: React.FC = () => {
 
   return (
     <div className={classes.root}>
+      <h1 className={classes.title}>List</h1>
+      <div>
         {posts &&
           posts.map((post: Posts) => (
             <div key={post.id}>
@@ -18,6 +20,7 @@ export const ListPosts: React.FC = () => {
               <p>{post?.keyWords[1]}</p>
             </div>
           ))}
+      </div>
     </div>
   );
 }

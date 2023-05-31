@@ -22,7 +22,7 @@ export const CreatePost: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      <h1>Create post</h1>
+      <h1 className={classes.title}>Create post</h1>
       <FormPost
         dataForm={dataForm}
         handleChange={handleChange}
