@@ -17,7 +17,7 @@ export const title = css`
   margin-top: 20px;
   font-size: xx-large;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-image: linear-gradient(120deg, #ff2, #f2f, #22f, #2ff, #2f2, #f22);
+  background: linear-gradient(120deg, #ff2, #f2f, #22f, #2ff, #2f2, #f22);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -48,7 +48,7 @@ export const section = css`
 `;
 
 export const subTitle = css`
-  background-image: linear-gradient(120deg, #ffff49, #ff10ff);
+  background: linear-gradient(120deg, #ffff49, #ff10ff);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;

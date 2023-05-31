@@ -1,11 +1,14 @@
-import React from 'react';
-import { CreatePost } from '@/pods';
-import * as classes from './create-post.styles';
+import React from "react";
+import { Footer, Header } from "@/common";
+import { CreatePost } from "@/pods";
+import * as classes from "./create-post.styles";
 
 export const CreatePostScene: React.FC = () => {
   return (
     <div className={classes.root}>
-        <CreatePost />
+      <Header />
+      <CreatePost />
+      <Footer />
     </div>
-  )
-}
+  );
+};

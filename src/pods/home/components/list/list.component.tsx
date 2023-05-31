@@ -7,13 +7,10 @@ export const List: React.FC = () => {
   return (
     <ul className={classes.list}>
       <li>
-        <Link to={SwitchRoutes.create}>Go to create a Post</Link>
+        <Link to={SwitchRoutes.create}>Go to create a post</Link>
       </li>
       <li>
-        <Link to={"#"}>Look the list post</Link>
-      </li>
-      <li>
-        <Link to={"#"}>Up date a post</Link>
+        <Link to={SwitchRoutes.list}>Look the list post</Link>
       </li>
     </ul>
   );
