@@ -3,12 +3,16 @@ import { css, keyframes } from "@emotion/css";
 
 export const root = css`
   border: solid;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  height: 90px;
+  background-image: url("assets/gallery/estrellas.jpg");
+  background-repeat: repeat;
 
   @media (min-width: 725px) {
     justify-content: space-between;
