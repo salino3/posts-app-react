@@ -1,6 +1,7 @@
 import React from 'react';
 import { GlobalContext, MyState, Posts } from '@/core';
 import * as classes from './list-posts.styles';
+import { Card } from './components';
 
 export const ListPosts: React.FC = () => {
 
@@ -10,16 +11,9 @@ export const ListPosts: React.FC = () => {
   return (
     <div className={classes.root}>
       <h1 className={classes.title}>List</h1>
-      <div>
+      <div className={classes.list}>
         {posts &&
-          posts.map((post: Posts) => (
-            <div key={post.id}>
-              <p>{post?.id}</p>
-              <p>{post?.title}</p>
-              <p>{post?.keyWords}</p>
-              <p>{post?.keyWords[1]}</p>
-            </div>
-          ))}
+          posts.map((post: Posts) => <Card post={post} key={post?.id} />)}
       </div>
     </div>
   );
