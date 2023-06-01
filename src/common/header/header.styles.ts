@@ -3,20 +3,21 @@ import { css, keyframes } from "@emotion/css";
 
 export const root = css`
   border: solid;
+  width: calc(100% - 15px);
+
   position: fixed;
-  width: 100%;
   padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   height: 90px;
-  background-image: url("assets/gallery/estrellas.jpg");
+  max-height: 90px;
+  background-image: url("/assets/gallery/estrellas.jpg");
   background-repeat: repeat;
 
   @media (min-width: 725px) {
     justify-content: space-between;
-    padding: 0px 50px;
   }
 `;
 
@@ -35,6 +36,10 @@ export const btnHome = css`
     padding: 7px;
     margin: 1px;
     font-size: 15px;
+  }
+
+  @media (min-width: 725px) {
+    margin-left: 15px;
   }
 `;
 
@@ -65,5 +70,7 @@ export const rotation = css`
 
   @media (min-width: 725px) {
     display: unset;
+    margin-right: 15px;
+    
   }
 `;

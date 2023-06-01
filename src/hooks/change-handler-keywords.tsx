@@ -8,7 +8,7 @@ interface Props {
 export const useChangeHandlerKeyWords = ({dataForm, setDataForm }: Props) => {
 
         const handleChangeKeyWords = (index: number) =>
-          (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+          (event: React.ChangeEvent<HTMLInputElement>
           ) => {
             const keywords = [...dataForm.keyWords];
             keywords[index] = event.target.value;

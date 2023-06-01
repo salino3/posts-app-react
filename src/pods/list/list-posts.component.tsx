@@ -1,5 +1,6 @@
 import React from 'react';
-import { GlobalContext, MyState, Posts } from '@/core';
+import { GlobalContext, MyState } from '@/core';
+import { GridComponent } from './components';
 import * as classes from './list-posts.styles';
 
 export const ListPosts: React.FC = () => {
@@ -10,17 +11,7 @@ export const ListPosts: React.FC = () => {
   return (
     <div className={classes.root}>
       <h1 className={classes.title}>List</h1>
-      <div>
-        {posts &&
-          posts.map((post: Posts) => (
-            <div key={post.id}>
-              <p>{post?.id}</p>
-              <p>{post?.title}</p>
-              <p>{post?.keyWords}</p>
-              <p>{post?.keyWords[1]}</p>
-            </div>
-          ))}
-      </div>
+      <GridComponent posts={posts} />
     </div>
   );
 }

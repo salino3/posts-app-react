@@ -14,6 +14,7 @@ export const root = css`
 export const title = css`
   font-size: 28px;
   height: 70px;
+  margin-top: 10px;
   font-weight: bolder;
   font-family: Georgia, "Times New Roman", Times, serif;
   background: linear-gradient(120deg, #2a7b2a, #592610);
