@@ -33,10 +33,10 @@ const deletePost = React.useCallback((id: number) => {
   });
 }, []);
 
-const updatePost = React.useCallback((id: number) => {
+const updatePost = React.useCallback((post: Posts) => {
   dispatch({
     type: "UPDATE_POST",
-    payload: id,
+    payload: post,
   });
 }, []);
 
@@ -47,7 +47,7 @@ const updatePost = React.useCallback((id: number) => {
 
   console.log("state", state);
   return (
-    <GlobalContext.Provider value={{ state, dispatch, createPost, deletePost }}>
+    <GlobalContext.Provider value={{ state, dispatch, updatePost, createPost, deletePost }}>
       {children}
     </GlobalContext.Provider>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Posts } from "@/core";
+import { useChangeHandler, useChangeHandlerKeyWords, useOnSubmit } from "@/hooks";
 import { FormPost } from "./components";
-import {useChangeHandler, useChangeHandlerKeyWords, useOnSubmit } from "./hooks";
 import * as classes from "./create-post.styles";
 
 export const CreatePost: React.FC = () => {

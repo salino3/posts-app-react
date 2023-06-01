@@ -15,7 +15,7 @@ interface DELETE_POST {
 
 interface UPDATE_POST {
   type: "UPDATE_POST";
-  payload: number;
+  payload: Posts;
 };
 
 export type All_Actions = GET_POSTS | CREATE_POST | DELETE_POST | UPDATE_POST;
@@ -63,5 +63,6 @@ export interface MyState {
   state: State;
   dispatch: React.Dispatch<All_Actions>;
   createPost: (post: Posts) => void;
-  deletePost: (id: number) => void
+  deletePost: (id: number) => void;
+  updatePost: (post: Posts) => void;
 };
