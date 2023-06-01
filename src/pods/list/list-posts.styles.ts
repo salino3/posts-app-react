@@ -13,12 +13,5 @@ export const title = css`
  text-align: center;
 `;
 
-export const list = css`
- 
-`;
-
-
-
-
 
 

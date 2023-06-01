@@ -9,14 +9,23 @@ interface Props {
 export const Card: React.FC<Props> = (props) => {
  const {post} = props;
 
+const handleDelete = (post: Posts) => {
+ console.log(post.id);
+};
+
+const handleEdit = (post: Posts) => {
+  console.log(post.id);
+};
+
   return (
     <div className={classes.card}>
-      <p className={classes.id}>
+      <h4 className={classes.id}>
         {post?.id})
         <div className={classes.btns}>
-          <button>Edit</button> <button>Delete</button>
+          <button onClick={() => handleEdit(post)}>Edit</button>{" "}
+          <button onClick={() => handleDelete(post)}>Delete</button>
         </div>
-      </p>
+      </h4>
       <p className={classes.title}>
         <span>Title:</span> <span>{post?.title}</span>
       </p>
@@ -26,14 +35,14 @@ export const Card: React.FC<Props> = (props) => {
       <div className={classes.boxImg}>
         <img src={post?.img} alt="image" />
       </div>
-      <p className={classes.pKey}>
+      <h4 className={classes.pKey}>
         <span>Keywords:</span>
         <div>
           <span>1) {post?.keyWords[0]}</span> <br />
           {post?.keyWords[1] && <span>2) {post?.keyWords[1]}</span>} <br />
           {post?.keyWords[2] && <span>3) {post?.keyWords[2]}</span>}
         </div>
-      </p>
+      </h4>
     </div>
   );
 }

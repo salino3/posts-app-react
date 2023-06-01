@@ -1,7 +1,7 @@
 import React from 'react';
-import { GlobalContext, MyState, Posts } from '@/core';
+import { GlobalContext, MyState } from '@/core';
+import { GridComponent } from './components';
 import * as classes from './list-posts.styles';
-import { Card } from './components';
 
 export const ListPosts: React.FC = () => {
 
@@ -11,10 +11,7 @@ export const ListPosts: React.FC = () => {
   return (
     <div className={classes.root}>
       <h1 className={classes.title}>List</h1>
-      <div className={classes.list}>
-        {posts &&
-          posts.map((post: Posts) => <Card post={post} key={post?.id} />)}
-      </div>
+      <GridComponent posts={posts} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ export const card = css`
   width: 220px;
   padding: 10px;
   gap: 10px;
-  
+  margin: 5px;
 `;
 
 export const id = css`

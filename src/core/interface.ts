@@ -19,7 +19,31 @@ export interface Posts {
   keyWords: string[];
 };
 
-export const posts: Posts[] = [];
+export const posts: Posts[] = [
+  {
+    id: 1,
+    title: "Gato",
+    description: "Gato con ojos bicolores amarillo y azúl",
+    img: "https://tse3.mm.bing.net/th?id=OIP.pq0brUL3WChYQ-S1BSsigQHaFj&pid=Api&P=0&h=180",
+    keyWords: ["Gato", "Blanco", "Bicolor"],
+  },
+  {
+    id: 2,
+    title: "Gato",
+    description: "Gato con ojos bicolores amarillo y azúl",
+    img: "https://tse3.mm.bing.net/th?id=OIP.pq0brUL3WChYQ-S1BSsigQHaFj&pid=Api&P=0&h=180",
+    keyWords: ["Gato", "Blanco", "Bicolor"],
+  },
+  {
+    id: 3,
+    title: "Gato",
+    description: "Gato con ojos bicolores amarillo y azúl",
+    img: "https://tse3.mm.bing.net/th?id=OIP.pq0brUL3WChYQ-S1BSsigQHaFj&pid=Api&P=0&h=180",
+    keyWords: ["Gato", "Blanco", "Bicolor"],
+  },
+];
+
+// export const posts: Posts[] = [];
 
 export interface State {
     posts: Posts[]
