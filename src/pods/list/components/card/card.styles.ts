@@ -3,6 +3,7 @@ import {css} from '@emotion/css';
 
 export const card = css`
   border: solid;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   width: 300px;

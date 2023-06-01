@@ -33,6 +33,13 @@ const deletePost = React.useCallback((id: number) => {
   });
 }, []);
 
+const updatePost = React.useCallback((id: number) => {
+  dispatch({
+    type: "UPDATE_POST",
+    payload: id,
+  });
+}, []);
+
 
   React.useEffect(() => {
     getPosts(posts);

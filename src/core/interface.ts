@@ -13,7 +13,12 @@ interface DELETE_POST {
   payload: number;
 };
 
-export type All_Actions = GET_POSTS | CREATE_POST | DELETE_POST;
+interface UPDATE_POST {
+  type: "UPDATE_POST";
+  payload: number;
+};
+
+export type All_Actions = GET_POSTS | CREATE_POST | DELETE_POST | UPDATE_POST;
 
 //
 export interface Posts {

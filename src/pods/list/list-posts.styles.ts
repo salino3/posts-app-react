@@ -8,9 +8,11 @@ export const root = css`
 `;
 
 export const title = css`
-
- margin-top: 10px;
- text-align: center;
+  text-align: center;
+  font-size: 28px;
+  height: 40px;
+  margin-top: 10px;
+  font-weight: bolder;
 `;
 
 
