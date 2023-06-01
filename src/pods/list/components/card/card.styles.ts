@@ -5,10 +5,15 @@ export const card = css`
   border: solid;
   display: flex;
   flex-direction: column;
-  width: 220px;
+  width: 300px;
   padding: 10px;
   gap: 10px;
-  margin: 5px;
+  margin: 5px auto;
+
+  @media (min-width: 725px) {
+    margin: 5px;
+    width: 220px;
+  }
 `;
 
 export const id = css`
@@ -59,6 +64,7 @@ export const desc = css`
 export const boxImg = css`
 
 img {
+    min-width: 100px;
     max-width: 200px;
     max-height: 200px;
     border-radius: 12px;

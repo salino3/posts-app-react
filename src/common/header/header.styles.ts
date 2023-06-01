@@ -2,9 +2,10 @@ import { css, keyframes } from "@emotion/css";
 
 
 export const root = css`
+  background-color: red;
   border: solid;
+  
   position: fixed;
-  width: 100%;
   padding: 5px;
   display: flex;
   flex-direction: row;

@@ -8,7 +8,12 @@ interface CREATE_POST {
   payload: Posts;
 };
 
-export type All_Actions = GET_POSTS | CREATE_POST;
+interface DELETE_POST {
+  type: "DELETE_POST";
+  payload: number;
+};
+
+export type All_Actions = GET_POSTS | CREATE_POST | DELETE_POST;
 
 //
 export interface Posts {
@@ -53,4 +58,5 @@ export interface MyState {
   state: State;
   dispatch: React.Dispatch<All_Actions>;
   createPost: (post: Posts) => void;
+  deletePost: (id: number) => void
 };

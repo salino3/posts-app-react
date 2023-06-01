@@ -19,12 +19,19 @@ export const MyProvider: React.FC<Props> = ({ children }) => {
 
 
 const createPost = React.useCallback((post: Posts) => {
-
+  
   dispatch({
-   type: "CREATE_POST",
-   payload: post
+    type: "CREATE_POST",
+    payload: post,
   });
- }, []);
+}, []);
+
+const deletePost = React.useCallback((id: number) => {
+  dispatch({
+    type: "DELETE_POST",
+    payload: id,
+  });
+}, []);
 
 
   React.useEffect(() => {
@@ -33,7 +40,7 @@ const createPost = React.useCallback((post: Posts) => {
 
   console.log("state", state);
   return (
-    <GlobalContext.Provider value={{ state, dispatch, createPost }}>
+    <GlobalContext.Provider value={{ state, dispatch, createPost, deletePost }}>
       {children}
     </GlobalContext.Provider>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Posts } from '@/core';
+import { GlobalContext, MyState, Posts } from '@/core';
 import * as classes from './card.styles';
 
 interface Props {
@@ -9,8 +9,12 @@ interface Props {
 export const Card: React.FC<Props> = (props) => {
  const {post} = props;
 
+ const {deletePost} = React.useContext<MyState>(GlobalContext);
+
 const handleDelete = (post: Posts) => {
- console.log(post.id);
+  if(post && post?.id){
+ deletePost(post?.id);
+ };
 };
 
 const handleEdit = (post: Posts) => {
@@ -33,7 +37,14 @@ const handleEdit = (post: Posts) => {
         <span>Description:</span> <span>{post?.description}</span>
       </p>
       <div className={classes.boxImg}>
-        <img src={post?.img} alt="image" />
+        <img
+          onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+            e.currentTarget.onerror = null; // para evitar bucles infinitos en caso de que la imagen predeterminada tampoco se cargue correctamente
+            e.currentTarget.src = 'public/vite.svg';
+          }}
+          src={post?.img}
+          alt="image"
+        />
       </div>
       <h4 className={classes.pKey}>
         <span>Keywords:</span>
