@@ -2,9 +2,9 @@ import { css, keyframes } from "@emotion/css";
 
 
 export const root = css`
-  background-color: red;
   border: solid;
-  
+  width: calc(100% - 15px);
+
   position: fixed;
   padding: 5px;
   display: flex;
@@ -17,7 +17,7 @@ export const root = css`
 
   @media (min-width: 725px) {
     justify-content: space-between;
-    padding: 0px 50px;
+
   }
 `;
 
@@ -36,6 +36,10 @@ export const btnHome = css`
     padding: 7px;
     margin: 1px;
     font-size: 15px;
+  }
+
+  @media (min-width: 725px) {
+    margin-left: 15px;
   }
 `;
 
@@ -66,5 +70,7 @@ export const rotation = css`
 
   @media (min-width: 725px) {
     display: unset;
+    margin-right: 15px;
+    
   }
 `;
