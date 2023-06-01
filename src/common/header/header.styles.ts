@@ -12,12 +12,12 @@ export const root = css`
   justify-content: space-around;
   align-items: center;
   height: 90px;
-  background-image: url("assets/gallery/estrellas.jpg");
+  max-height: 90px;
+  background-image: url("/assets/gallery/estrellas.jpg");
   background-repeat: repeat;
 
   @media (min-width: 725px) {
     justify-content: space-between;
-
   }
 `;
 

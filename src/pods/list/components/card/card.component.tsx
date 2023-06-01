@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { GlobalContext, MyState, Posts } from '@/core';
 import * as classes from './card.styles';
+import { SwitchRoutes } from '@/router';
 
 interface Props {
  post: Posts;
@@ -9,6 +11,7 @@ interface Props {
 export const Card: React.FC<Props> = (props) => {
  const {post} = props;
 
+ const navigate = useNavigate();
  const {deletePost} = React.useContext<MyState>(GlobalContext);
 
 const handleDelete = (post: Posts) => {
@@ -18,7 +21,7 @@ const handleDelete = (post: Posts) => {
 };
 
 const handleEdit = (post: Posts) => {
-  console.log(post.id);
+  navigate(`${SwitchRoutes.update}/${post.id}`);
 };
 
   return (

@@ -5,6 +5,7 @@ export const root = css`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
 `;
 
 
