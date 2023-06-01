@@ -1,32 +1,21 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { GlobalContext, MyState, Posts } from '@/core';
+import {  useChangeHandler, useChangeHandlerKeyWords, useOnSubmit } from '@/hooks';
 import * as classes from './update.styles';
-import { onUpdate, useChangeHandler, useChangeHandlerKeyWords } from '@/hooks';
 
 export const UpdateComponent: React.FC = () => {
 
   const params = useParams();
-  const { state, updatePost } = React.useContext<MyState>(GlobalContext);
+  const { state } = React.useContext<MyState>(GlobalContext);
   const post: Posts = state.posts.filter((post: Posts) => post.id === Number(params.id))[0];
 
-   const [dataForm, setDataForm] = React.useState<Posts>(post);
+  const [dataForm, setDataForm] = React.useState<Posts>(post);
 
-const {handleChange} = useChangeHandler({ dataForm, setDataForm });
-const {handleChangeKeyWords} = useChangeHandlerKeyWords({ dataForm, setDataForm });
-const {handleUpdate} = onUpdate({dataForm});
+  const {handleChange} = useChangeHandler({ dataForm, setDataForm });
+  const {handleChangeKeyWords} = useChangeHandlerKeyWords({ dataForm, setDataForm });
+  const {handleUpdate} = useOnSubmit(dataForm);
 
-
-// const handleSubmit: React.FormEventHandler<HTMLFormElement> = (
-//   event: React.FormEvent<HTMLFormElement>) => {
-//     event.preventDefault();
-
-//    updatePost(dataForm);
-//   };
-
-
-
-console.log(post && post?.title);
 
   return (
     <main className={classes.root}>

@@ -6,7 +6,8 @@ import { SwitchRoutes } from "@/router";
 export const useOnSubmit = (dataForm : Posts) => {
 
   const navigate = useNavigate();
-  const { createPost, state } = React.useContext<MyState>(GlobalContext);
+  const { createPost, state, updatePost } = React.useContext<MyState>(GlobalContext);
+
   let newId: number | null | undefined = state?.posts[state.posts.length - 1]?.id;
 
 
@@ -32,7 +33,19 @@ export const useOnSubmit = (dataForm : Posts) => {
    navigate(SwitchRoutes.list);
   };
 
+  //*/
+
+   const handleUpdate: React.FormEventHandler<HTMLFormElement> = (
+     event: React.FormEvent<HTMLFormElement>
+   ) => {
+     event.preventDefault();
+
+     updatePost(dataForm);
+     navigate(SwitchRoutes.list);
+   };
+
   return {
     handleSubmit,
+    handleUpdate,
   };
 };
