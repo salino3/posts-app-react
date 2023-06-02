@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { cx } from "@emotion/css";
+import { SwitchRoutes } from "@/router";
 import { CardInput } from "../card/card.component";
 import * as classes from "./search-bar.styles";
 
@@ -33,7 +34,7 @@ export const SearchBar: React.FC = () => {
     ) {
       Searching = event?.target?.keyWords?.value;
     }
-    navigate(`/info/${Searching}`);
+    navigate(`${SwitchRoutes.info}/${Searching}`);
     setText("");
   };
 
