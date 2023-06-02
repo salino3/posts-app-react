@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { CreatePostLayout, HomeLayout, InfoLayout, ListPostsLayout, UpdateLayout } from "@/layout";
+import { CreatePostLayout, HomeLayout, InfoLayout, ListPostsLayout, PageNotFoundLayout, UpdateLayout } from "@/layout";
 import { SwitchRoutes } from "./interfaces";
 
 export const AppRouter: React.FC = () => {
@@ -11,6 +11,7 @@ export const AppRouter: React.FC = () => {
       <Route path={SwitchRoutes.list} element={<ListPostsLayout />} />
       <Route path={`${SwitchRoutes.update}/:id`} element={<UpdateLayout />} />
       <Route path={`${SwitchRoutes.info}/:id`} element={<InfoLayout />} />
+      <Route path={SwitchRoutes.pnf} element={<PageNotFoundLayout />} />
     </Routes>
   );
 };

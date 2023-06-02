@@ -4,6 +4,7 @@ export interface RouteProps {
   list: string;
   update: string;
   info: string;
+  pnf: string;
 };
 
 export const SwitchRoutes: RouteProps = {
@@ -12,4 +13,5 @@ export const SwitchRoutes: RouteProps = {
   list: "/posts-app-react/list",
   update: "/posts-app-react/update",
   info: "/posts-app-react/info",
+  pnf: "/posts-app-react/*",
 };
