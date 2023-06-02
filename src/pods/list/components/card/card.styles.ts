@@ -49,9 +49,9 @@ export const btns = css`
   }
 `;
 
-export const title = css` 
-
- text-decoration: underline #630000 2px;
+export const title = css`
+  text-decoration: underline #630000 2px;
+  word-wrap: break-word;
 `;
 
 export const desc = css`
@@ -60,6 +60,7 @@ export const desc = css`
   padding: 5px;
   min-height: 40px;
   max-height: 80px;
+  word-wrap: break-word;
 `;
 
 export const boxImg = css`

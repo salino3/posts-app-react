@@ -24,6 +24,7 @@ export const input = css`
   border-radius: 5px;
   margin-right: 3px;
   margin-top: 2px;
+  outline: none;
 
   @media (min-width: 725px) {
     width: 170px;

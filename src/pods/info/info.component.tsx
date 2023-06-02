@@ -26,7 +26,7 @@ if(!post){
       <h1 className={classes.title}>
         Info Post nº <span className={classes.textRed}>{params?.id}</span>
       </h1>
-      <div>
+      <div className={classes.container}>
         <h3>
           Title: <span className={classes.textBlue}>{post?.title}</span>
         </h3>
@@ -40,7 +40,7 @@ if(!post){
             <img
               onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = "vite.svg";
+                e.currentTarget.src = "/public/vite.svg";
               }}
               src={post?.img}
               alt="image"

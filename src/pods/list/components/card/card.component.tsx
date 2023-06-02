@@ -43,7 +43,7 @@ const handleEdit = (post: Posts) => {
         <img
           onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
             e.currentTarget.onerror = null; // para evitar bucles infinitos en caso de que la imagen predeterminada tampoco se cargue correctamente
-            e.currentTarget.src = 'vite.svg';
+            e.currentTarget.src = "/public/vite.svg";
           }}
           src={post?.img}
           alt="image"

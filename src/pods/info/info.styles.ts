@@ -4,13 +4,29 @@ export const root = css`
 
   margin-top: 90px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  
 `;
 
 export const title = css`
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: xx-large;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
+  word-wrap: break-word;
+`;
+
+export const container = css`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: x-large;
+  margin-top: 30px;
+  max-width: 300px;
+  word-wrap: break-word;
 `;
 
 export const textRed = css`
