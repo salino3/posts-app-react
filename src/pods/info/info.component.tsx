@@ -40,7 +40,7 @@ if(!post){
             <img
               onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = "/public/vite.svg";
+                e.currentTarget.src = "vite.svg";
               }}
               src={post?.img}
               alt="image"
