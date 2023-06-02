@@ -1,22 +1,21 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { CardInput } from '../card/card.component';
-import * as classes from './search-bar.styles';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { cx } from "@emotion/css";
+import { CardInput } from "../card/card.component";
+import * as classes from "./search-bar.styles";
 
 export const SearchBar: React.FC = () => {
-
-  
   const navigate = useNavigate();
 
-  const [first, setFirst] = React.useState<string>("");
+  const [text, setText] = React.useState<string>("");
   const [toggleList, setToggleList] = React.useState<boolean>(true);
 
   const divCardRef = React.useRef<HTMLDivElement>(null);
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (
-    event: any
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setFirst(event.target.value);
+    setText(event.target.value);
     setToggleList(true);
   };
 
@@ -28,14 +27,14 @@ export const SearchBar: React.FC = () => {
     let Searching: string = "";
     if (
       event &&
-      event.target &&
-      event.target.product &&
-      event.target.product.value
+      event?.target &&
+      event?.target?.keyWords &&
+      event?.target?.keyWords.value
     ) {
-      Searching = event.target.product.value;
+      Searching = event?.target?.keyWords?.value;
     }
     navigate(`/info/${Searching}`);
-    setFirst("");
+    setText("");
   };
 
   //
@@ -62,24 +61,22 @@ export const SearchBar: React.FC = () => {
       </label>
       <input
         onChange={handleChange}
-        value={first}
+        value={text}
         className={classes.input}
         name="keyWords"
         placeholder="What do you look for?"
         type="text"
       />
       <button
-        className={classes.btn}
-        disabled={first ? false : true}
+        className={cx(classes.btn, { [classes.btnActive]: !!text })}
+        disabled={text ? false : true}
         type="submit"
       >
         Search
       </button>
       <div className="divCard" ref={divCardRef}>
-        {toggleList && first 
-        ? <CardInput first={first} setFirst={setFirst} /> 
-        : ""}
+        {toggleList && text ? <CardInput text={text} setText={setText} /> : ""}
       </div>
     </form>
   );
-}
+};

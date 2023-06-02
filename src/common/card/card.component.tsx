@@ -2,18 +2,18 @@ import React from "react";
 import { GlobalContext, MyState, Posts } from "@/core";
 
 interface Props {
-  first: string;
-setFirst: React.Dispatch<React.SetStateAction<string>>};
+  text: string;
+  setText: React.Dispatch<React.SetStateAction<string>>;
+};
 
 export const CardInput: React.FC<Props> = (props) => {
-  const { first, setFirst } = props;
+  const { text, setText } = props;
 
   const { state } = React.useContext<MyState>(GlobalContext);
   const { posts } = state;
 
   const onSearchCard = (event: Posts): void => {
-    // setFirst(event?.id?.toString());
-    setFirst(String(event?.id));
+    setText(String(event?.id));
   };
 
   return (
@@ -21,12 +21,12 @@ export const CardInput: React.FC<Props> = (props) => {
       {!posts
         ? "Loading"
         : posts
-            .filter((item: Posts) => {
+            .filter((post: Posts) => {
               let searchTerm = "";
-              let x: string = first?.toLowerCase() || "";
+              let x: string = text?.toLowerCase() || "";
               searchTerm = x || "";
-              const thetitle: string = item.title.toLowerCase() || "";
-              const theid =  item?.id?.toString();
+              const thetitle: string = post.title.toLowerCase() || "";
+              const theid =  post?.id?.toString();
 
               return (
                 searchTerm &&
@@ -35,14 +35,14 @@ export const CardInput: React.FC<Props> = (props) => {
               );
             })
             .slice(0, 10)
-            .map((item: Posts) => (
+            .map((post: Posts) => (
               <div
-                onClick={() => onSearchCard(item)}
+                onClick={() => onSearchCard(post)}
                 className="divRows"
-                key={item.id}
+                key={post.id}
               >
                 <b>
-                  {item.id} ~ {item.title}
+                  {post.id} ~ {post.title}
                 </b>
               </div>
             ))}

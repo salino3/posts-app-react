@@ -38,6 +38,9 @@ export const btn = css`
   background-color: #4361ee;
   cursor: pointer;
 
+`;
+
+export const btnActive = css`
   &:active {
     padding: 3px;
     margin: 1px;
