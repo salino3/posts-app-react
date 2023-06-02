@@ -1,7 +1,7 @@
 import React from 'react';
-import * as classes from './navbar.styles';
 import { Link } from 'react-router-dom';
 import { SwitchRoutes } from '@/router';
+import * as classes from './navbar.styles';
 
 export const Navbar: React.FC = () => {
 

@@ -9,11 +9,7 @@ export const container = css`
   font-weight: 600;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   max-width: 245px;
-  display: none;
 
-  @media (min-width: 725px) {
-    display: unset;
-  }
 `;
 
 export const label = css`
@@ -24,9 +20,14 @@ export const label = css`
 export const input = css`
   grid-area: i;
   padding: 4px;
-  width: 170px;
+  width: 145px;
   border-radius: 5px;
-  margin-right: 5px;
+  margin-right: 3px;
+
+  @media (min-width: 725px) {
+    width: 170px;
+    margin-right: 6px;
+  }
 `;
 
 export const btn = css`

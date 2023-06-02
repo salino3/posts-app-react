@@ -32,6 +32,7 @@ export const boxImg = css`
 `;
 
 export const boxKeyWords = css`
+
   h3 {
     display: flex;
     flex-direction: row;

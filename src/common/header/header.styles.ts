@@ -18,6 +18,7 @@ export const root = css`
 
   @media (min-width: 725px) {
     justify-content: space-between;
+    
   }
 `;
 
