@@ -1,5 +1,6 @@
 import React from "react";
 import { GlobalContext, MyState, Posts } from "@/core";
+import * as classes from './card.styles';
 
 interface Props {
   text: string;
@@ -38,7 +39,7 @@ export const CardInput: React.FC<Props> = (props) => {
             .map((post: Posts) => (
               <div
                 onClick={() => onSearchCard(post)}
-                className="divRows"
+                className={classes.content}
                 key={post.id}
               >
                 <b>

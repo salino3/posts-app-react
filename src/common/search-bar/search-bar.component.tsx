@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { cx } from "@emotion/css";
 import { SwitchRoutes } from "@/router";
-import { CardInput } from "../card/card.component";
+import { CardInput } from "../card";
 import * as classes from "./search-bar.styles";
 
 export const SearchBar: React.FC = () => {
@@ -75,7 +75,7 @@ export const SearchBar: React.FC = () => {
       >
         Search
       </button>
-      <div className="divCard" ref={divCardRef}>
+      <div className={classes.divCard} ref={divCardRef}>
         {toggleList && text ? <CardInput text={text} setText={setText} /> : ""}
       </div>
     </form>

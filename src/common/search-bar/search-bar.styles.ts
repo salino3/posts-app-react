@@ -23,6 +23,7 @@ export const input = css`
   width: 145px;
   border-radius: 5px;
   margin-right: 3px;
+  margin-top: 2px;
 
   @media (min-width: 725px) {
     width: 170px;
@@ -35,16 +36,28 @@ export const btn = css`
   padding: 4px;
   width: 60px;
   border-radius: 8px;
-  color: white;
+  color: grey;
   background-color: #4361ee;
+  opacity: 0.7;
+
   cursor: pointer;
 
 `;
 
 export const btnActive = css`
+    opacity: unset;
+    color: white;
   &:active {
     padding: 3px;
     margin: 1px;
     font-size: 15px;
   }
+`;
+
+export const divCard = css`
+  cursor: pointer;
+  text-align: start;
+  position: absolute;
+  margin-top: 45px;
+  z-index: 2;
 `;
