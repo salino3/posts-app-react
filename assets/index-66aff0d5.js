@@ -355,6 +355,7 @@ Error generating stack: `+i.message+`
     font-size: 16px;
     background-color: #bfbf22;
     color: white;
+    cursor: pointer;
 
     &:active {
       padding: 3px 6px;
@@ -438,6 +439,7 @@ img {
     padding: 6px 12px;
     font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
 
     &:active {
       padding: 5px 11px;
@@ -568,6 +570,7 @@ img {
     padding: 6px 12px;
     font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
 
     &:active {
       padding: 5px 11px;
