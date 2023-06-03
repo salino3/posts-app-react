@@ -85,7 +85,7 @@ export const UpdateForm: React.FC<Props> = (props) => {
         />
       </div>
       <div className={classes.boxBtnForm}>
-        <button type="submit">Send</button>
+        <button type="submit">Update</button>
       </div>
     </form>
   );
