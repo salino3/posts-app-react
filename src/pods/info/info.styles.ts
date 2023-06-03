@@ -1,5 +1,22 @@
 import { css } from "@emotion/css";
 
+export const rootError = css`
+  margin-top: 90px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: red;
+
+  h1 {
+   font-size: 48px;
+    margin-top: 80px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    word-wrap: break-word;
+  }
+`;
+
 export const root = css`
 
   margin-top: 90px;
@@ -8,7 +25,7 @@ export const root = css`
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  
+  margin-bottom: 80px;
 `;
 
 export const title = css`
@@ -48,12 +65,9 @@ export const boxImg = css`
 `;
 
 export const boxKeyWords = css`
-
-  h3 {
     display: flex;
     flex-direction: row;
     gap: 30px;
-  }
 `;
 
 

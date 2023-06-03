@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import * as classes from './info.styles';
 import { GlobalContext, MyState, Posts } from '@/core';
+import * as classes from './info.styles';
 
 export const InfoComponent: React.FC = () => {
 
@@ -14,8 +14,8 @@ export const InfoComponent: React.FC = () => {
 
 if(!post){
    return (
-     <div className={classes.root}>
-       <h1 className={classes.title}>Post didn`t find or don't exist</h1>
+     <div className={classes.rootError}>
+       <h1>* Post didn`t find or don't exist *</h1>
      </div>
    );
 };
@@ -47,16 +47,22 @@ if(!post){
             />
           </div>
         </h3>
-        <div className={classes.boxKeyWords}>
-          <h3>
+          <h3 className={classes.boxKeyWords}>
             Key Words:
             <div>
-            {post?.keyWords[0] &&  <span className={classes.textBlue}>{post?.keyWords[0]}</span> } <br />
-            {post?.keyWords[1] && <span className={classes.textBlue}>{post?.keyWords[1]}</span>} <br />
-            {post?.keyWords[2] && <span className={classes.textBlue}>{post?.keyWords[2]}</span>}
+              {post?.keyWords[0] && (
+                <span className={classes.textBlue}>{post?.keyWords[0]}</span>
+              )}{" "}
+              <br />
+              {post?.keyWords[1] && (
+                <span className={classes.textBlue}>{post?.keyWords[1]}</span>
+              )}{" "}
+              <br />
+              {post?.keyWords[2] && (
+                <span className={classes.textBlue}>{post?.keyWords[2]}</span>
+              )}
             </div>
           </h3>
-        </div>
       </div>
     </div>
   );
