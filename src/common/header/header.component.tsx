@@ -12,12 +12,12 @@ export const Header: React.FC = () => {
 
   return (
     <header className={classes.root}>
-      <button
+       <button
         className={classes.btnHome}
         onClick={() => navigate(SwitchRoutes.root)}
-      >
+        >
         Home
-      </button>
+       </button>
       <Navbar />
       <div className={classes.boxContent}>
        <SearchBar />

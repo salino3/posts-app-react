@@ -13,7 +13,7 @@ export const root = css`
   align-items: center;
   height: 90px;
   max-height: 90px;
-  background-image: url("/assets/gallery/estrellas.jpg");
+  background-image: url("assets/gallery/estrellas.jpg");
   background-repeat: repeat;
 
   @media (min-width: 725px) {
@@ -36,7 +36,11 @@ export const btnHome = css`
   &:active {
     padding: 7px;
     margin: 1px;
+    width: 62px;
     font-size: 15px;
+    @media (min-width: 725px) {
+      margin-left: 15px;
+    }
   }
 
   @media (min-width: 725px) {

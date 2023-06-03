@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GlobalContext, MyState, Posts } from '@/core';
-import * as classes from './card.styles';
 import { SwitchRoutes } from '@/router';
+import * as classes from './card.styles';
 
 interface Props {
  post: Posts;
@@ -42,10 +42,10 @@ const handleEdit = (post: Posts) => {
       <div className={classes.boxImg}>
         <img
           onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-            e.currentTarget.onerror = null; // para evitar bucles infinitos en caso de que la imagen predeterminada tampoco se cargue correctamente
-            e.currentTarget.src = "/public/vite.svg";
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = "vite.svg";
           }}
-          src={post?.img}
+          src={post && post?.img}
           alt="image"
         />
       </div>

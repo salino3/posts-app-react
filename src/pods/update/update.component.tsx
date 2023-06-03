@@ -2,8 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { GlobalContext, MyState, Posts } from '@/core';
 import {  useChangeHandler, useChangeHandlerKeyWords, useOnSubmit } from '@/hooks';
-import * as classes from './update.styles';
 import { UpdateForm } from './components';
+import * as classes from './update.styles';
 
 export const UpdateComponent: React.FC = () => {
 

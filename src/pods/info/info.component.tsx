@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { GlobalContext, MyState, Posts } from '@/core';
+import viteImg from '../../../public/vite.svg'
 import * as classes from './info.styles';
 
 export const InfoComponent: React.FC = () => {
@@ -40,29 +41,29 @@ if(!post){
             <img
               onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = "/public/vite.svg";
+                e.currentTarget.src = viteImg;
               }}
-              src={post?.img}
+              src={post && post?.img}
               alt="image"
             />
           </div>
         </h3>
-          <h3 className={classes.boxKeyWords}>
-            Key Words:
-            <div>
-              {post?.keyWords[0] && (
-                <span className={classes.textBlue}>{post?.keyWords[0]}</span>
-              )}{" "}
-              <br />
-              {post?.keyWords[1] && (
-                <span className={classes.textBlue}>{post?.keyWords[1]}</span>
-              )}{" "}
-              <br />
-              {post?.keyWords[2] && (
-                <span className={classes.textBlue}>{post?.keyWords[2]}</span>
-              )}
-            </div>
-          </h3>
+        <h3 className={classes.boxKeyWords}>
+          Key Words:
+          <div>
+            {post?.keyWords[0] && (
+              <span className={classes.textBlue}>{post?.keyWords[0]}</span>
+            )}{" "}
+            <br />
+            {post?.keyWords[1] && (
+              <span className={classes.textBlue}>{post?.keyWords[1]}</span>
+            )}{" "}
+            <br />
+            {post?.keyWords[2] && (
+              <span className={classes.textBlue}>{post?.keyWords[2]}</span>
+            )}
+          </div>
+        </h3>
       </div>
     </div>
   );
