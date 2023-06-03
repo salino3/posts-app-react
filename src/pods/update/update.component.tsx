@@ -20,12 +20,18 @@ export const UpdateComponent: React.FC = () => {
 
   return (
     <main className={classes.root}>
-      <h1 className={classes.title}>Update Post nº {dataForm && dataForm?.id}</h1>
+      <h1 className={classes.title}>
+        Update Post nº{" "}
+        <span className={classes.textRed}>
+          {dataForm && dataForm?.id}
+        </span>
+      </h1>
       <UpdateForm
-       dataForm={dataForm} 
-       handleChange={handleChange}
-       handleChangeKeyWords={handleChangeKeyWords}
-       handleUpdate={handleUpdate} />
+        dataForm={dataForm}
+        handleChange={handleChange}
+        handleChangeKeyWords={handleChangeKeyWords}
+        handleUpdate={handleUpdate}
+      />
     </main>
   );
 }

@@ -10,4 +10,10 @@ export const root = css`
 export const title = css`
   margin: 12px;
   text-align: center;
+  font-size: x-large;
+`;
+
+export const textRed = css`
+  color: #c40101;
+  font-weight: 600;
 `;

@@ -4,6 +4,7 @@ import { CreatePostLayout, HomeLayout, InfoLayout, ListPostsLayout, PageNotFound
 import { SwitchRoutes } from "./interfaces";
 
 export const AppRouter: React.FC = () => {
+  
   return (
     <Routes>
       <Route path={SwitchRoutes.root} element={<HomeLayout />} />
