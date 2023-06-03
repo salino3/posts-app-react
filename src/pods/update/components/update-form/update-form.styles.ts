@@ -36,6 +36,7 @@ export const boxBtnForm = css`
     padding: 6px 12px;
     font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
 
     &:active {
       padding: 5px 11px;

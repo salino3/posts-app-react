@@ -37,6 +37,7 @@ export const btns = css`
     font-size: 16px;
     background-color: #bfbf22;
     color: white;
+    cursor: pointer;
 
     &:active {
       padding: 3px 6px;
