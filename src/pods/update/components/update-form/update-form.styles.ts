@@ -17,7 +17,32 @@ export const form = css`
     font-weight: 600;
   }
 
-  input-security, textarea {
+  input, textarea {
     margin-top: 2px;
+    border-radius: 8px;
+    padding: 2px;
+  }
+`;
+
+export const boxBtnForm = css`
+  display: flex;
+  place-content: center;
+  height: 33px;
+  margin-top: 10px;
+  button {
+    border-radius: 12px;
+    color: white;
+    background: purple;
+    padding: 6px 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:active {
+      padding: 5px 11px;
+      margin: 1px;
+      height: 31px;
+      font-size: 17px;
+    }
   }
 `;

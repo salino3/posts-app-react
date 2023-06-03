@@ -14,7 +14,7 @@ export const UpdateForm: React.FC<Props> = (props) => {
 
   return (
     <form className={classes.form} onSubmit={handleUpdate}>
-      <div className={""}>
+      <div>
         <label htmlFor="title">Title</label> <br />
         <input
           placeholder="Text a title"
@@ -37,10 +37,11 @@ export const UpdateForm: React.FC<Props> = (props) => {
           required
         ></textarea>
       </div>
-      <div className={""}>
+      <div>
         <label htmlFor="img">
           Image <small>(not required)</small>
-        </label> <br />
+        </label>{" "}
+        <br />
         <textarea
           name="img"
           placeholder="Paste your URL image"
@@ -51,10 +52,11 @@ export const UpdateForm: React.FC<Props> = (props) => {
           onChange={handleChange("img")}
         ></textarea>
       </div>
-      <div className={""}>
+      <div>
         <label htmlFor="keyWords">
-          Key Words  <small>(only first one required)</small>
-        </label> <br />
+          Key Words <small>(only first one required)</small>
+        </label>{" "}
+        <br />
         <input
           placeholder="Text first key word"
           name="keyWords[0]"
@@ -64,7 +66,7 @@ export const UpdateForm: React.FC<Props> = (props) => {
           onChange={handleChangeKeyWords(0)}
         />
       </div>
-      <div className={""}>
+      <div >
         <input
           placeholder="Text second key word"
           name="keyWords[1]"
@@ -73,7 +75,7 @@ export const UpdateForm: React.FC<Props> = (props) => {
           onChange={handleChangeKeyWords(1)}
         />
       </div>
-      <div className={""}>
+      <div>
         <input
           placeholder="Text third key word"
           name="keyWords[2]"
@@ -82,8 +84,8 @@ export const UpdateForm: React.FC<Props> = (props) => {
           onChange={handleChangeKeyWords(2)}
         />
       </div>
-      <div className={""}>
-        <button type="submit">Send</button>
+      <div className={classes.boxBtnForm}>
+        <button type="submit">Update</button>
       </div>
     </form>
   );

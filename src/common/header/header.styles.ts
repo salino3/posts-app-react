@@ -36,7 +36,11 @@ export const btnHome = css`
   &:active {
     padding: 7px;
     margin: 1px;
+    width: 62px;
     font-size: 15px;
+    @media (min-width: 725px) {
+      margin-left: 15px;
+    }
   }
 
   @media (min-width: 725px) {
