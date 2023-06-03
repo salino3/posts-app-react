@@ -162,7 +162,7 @@ Error generating stack: `+i.message+`
   align-items: center;
   height: 90px;
   max-height: 90px;
-  background-image: url("/assets/gallery/estrellas.jpg");
+  background-image: url("assets/gallery/estrellas.jpg");
   background-repeat: repeat;
 
   @media (min-width: 725px) {
