@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GlobalContext, MyState, Posts } from '@/core';
 import { SwitchRoutes } from '@/router';
+import viteImg from '../../../../../public/vite.svg';
 import * as classes from './card.styles';
 
 interface Props {
@@ -43,7 +44,7 @@ const handleEdit = (post: Posts) => {
         <img
           onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
             e.currentTarget.onerror = null;
-            e.currentTarget.src = "vite.svg";
+            e.currentTarget.src = viteImg;
           }}
           src={post && post?.img}
           alt="image"
